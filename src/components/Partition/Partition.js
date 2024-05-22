@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './Partition.css';
 import { getRandomColor } from '../../utils/getRandomcolor';
 
@@ -6,8 +6,6 @@ const Partition = ({ initialColor }) => {
  
     const [isSplit, setIsSplit] = useState(false);
     const [isVertical, setIsVertical] = useState(true);
-    const [leftColor, setLeftColor] = useState(initialColor);
-    const [rightColor, setRightColor] = useState(getRandomColor());
     const [dimensions, setDimensions] = useState({ width: '100%', height: '100%' });
 
     const partitionRef = useRef(null);
@@ -59,8 +57,8 @@ const Partition = ({ initialColor }) => {
                 </div>
             ) : (
                 <div className={`split-container ${isVertical ? 'vertical' : 'horizontal'}`}>
-                    <Partition initialColor={leftColor} />
-                    <Partition initialColor={rightColor} />
+                    <Partition initialColor={initialColor} />
+                    <Partition initialColor={getRandomColor()} />
                         <div className='resizer' onMouseDown={handleMouseDown}><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M8 18h3v-3H2v-2h20v2h-9v3h3l-4 4zm4-16L8 6h3v3H2v2h20V9h-9V6h3z" /></svg></div>
                     <button className="remove-button" onClick={handleRemove}>-</button>
                 </div>
