@@ -9,7 +9,6 @@ const Grid = () => {
     const handleTileClick = (letter) => {
         let newOutputString = outputString + letter;
 
-        // Replace consecutive letters logic
         newOutputString = newOutputString.replace(/(.)\1{2,}/g, (match) => '_');
 
         setOutputString(newOutputString);

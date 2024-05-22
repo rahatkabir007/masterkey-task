@@ -1,0 +1,69 @@
+.partition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button,.remove-button{
+     display: inline-block;
+                outline: 0;
+                cursor: pointer;
+                border: 2px solid #000;
+                border-radius: 3px;
+               color: black;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 28px;
+                padding: 5px 7px;
+                text-align:center;
+              
+}
+.split-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.vertical {
+  flex-direction: row;
+}
+
+.horizontal {
+  flex-direction: column;
+}
+
+.resizer {
+  background: #000;
+  z-index: 1;
+}
+
+.vertical .resizer {
+  width: 5px;
+  cursor: col-resize;
+}
+
+.horizontal .resizer {
+  height: 5px;
+  cursor: row-resize;
+}
+
+.remove-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  padding: 2px 20px !important;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
